@@ -30,7 +30,7 @@ across motor-driven equipment.
 Full bill of materials: [`docs/hardware/BOM`]
 
 ## Architecture
-![Architecture](docs/architecture/architecture.png)
+![Architecture](docs/architecture/MachineSense_Architecture.svg)
 
 Sensors to MCU (real-time sampling + framing) to Arduino Bridge to MPU
 (windowing, FFT + features, ML inference, health score) to dashboard + alerts.
