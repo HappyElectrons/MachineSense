@@ -1,0 +1,28 @@
+# Arduino / firmware build artifacts
+build/
+*.elf
+*.bin
+*.hex
+.arduino*/
+
+# Python (MPU + offline ML)
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.ipynb_checkpoints/
+*.egg-info/
+
+
+# Training checkpoints / large models (use Git LFS for anything big)
+*.h5
+*.ckpt
+models/checkpoints/
+
+.env
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

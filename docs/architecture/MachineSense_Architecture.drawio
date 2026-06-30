@@ -1,0 +1,91 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36" version="27.1.5">
+  <diagram id="predmaint-unoq" name="System Architecture">
+    <mxGraphModel dx="1426" dy="728" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="700" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="board" value="Arduino UNO Q (single board)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#666666;verticalAlign=top;fontStyle=1;fontSize=13;arcSize=4;" parent="1" vertex="1">
+          <mxGeometry x="585" y="88" width="300" height="440" as="geometry" />
+        </mxCell>
+        <mxCell id="senC" value="Sensors" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;verticalAlign=top;fontStyle=1;fontSize=13;" parent="1" vertex="1">
+          <mxGeometry x="280" y="138" width="190" height="370" as="geometry" />
+        </mxCell>
+        <mxCell id="asset" value="Monitored asset&#xa;(motor / fan / pump)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="10" y="275" width="120" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="s1" value="Accelerometer&#xa;(vibration)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="300" y="178" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="s2" value="Temperature" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="300" y="263" width="150" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="s3" value="Voltage" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="300" y="343" width="150" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="s4" value="Current" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="300" y="423" width="150" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="mcu" value="STM32U585 (MCU)&#xa;Real-time sampling + framing" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="605" y="138" width="260" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="bridge" value="Arduino Bridge (RPC)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="635" y="253" width="200" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="mpu" value="QRB2210 (MPU), Debian Linux&#xa;FFT + features + ML inference&#xa;Health score + dashboard" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="605" y="324" width="260" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="dlog" value="Dataset log&#xa;(eMMC)" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=12;fillColor=#f5f5f5;strokeColor=#999999;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="675" y="452" width="120" height="64" as="geometry" />
+        </mxCell>
+        <mxCell id="alert" value="Alert&#xa;(LED + buzzer)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="920" y="148" width="170" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="dash" value="Web dashboard&#xa;(live charts + status)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="920" y="273" width="170" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="cloud" value="Cloud (optional)&#xa;Wi-Fi / MQTT" style="shape=cloud;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="885" y="452" width="170" height="85" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" value="vibration / heat / current" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;startArrow=none;fontSize=11;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="asset" target="senC" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;startArrow=none;fontSize=11;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="senC" target="mcu" edge="1">
+          <mxGeometry x="-1" y="-311" relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="540" y="323" />
+              <mxPoint x="540" y="183" />
+            </Array>
+            <mxPoint x="-261" y="307" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e3" value="frames" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;startArrow=classic;fontSize=11;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="mcu" target="bridge" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" value="RPC" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;startArrow=classic;fontSize=11;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="bridge" target="mpu" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" value="log" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;startArrow=none;fontSize=11;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="mpu" target="dlog" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;startArrow=none;fontSize=11;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="mcu" target="alert" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;startArrow=none;fontSize=11;exitX=1;exitY=0.3;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="mpu" target="dash" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" value="MQTT" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;startArrow=none;fontSize=11;exitX=1;exitY=0.7;exitDx=0;exitDy=0;entryX=0.588;entryY=0.153;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="mpu" target="cloud" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="title" value="Predictive Maintenance System - Arduino UNO Q" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=16;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="210" y="30" width="520" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cap" value="Split-processing: STM32 = hard real-time acquisition, QRB2210 = Linux compute / AI" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=11;fontColor=#666666;" parent="1" vertex="1">
+          <mxGeometry x="550" y="560" width="420" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Us1Y3Vszi2mmmdx_ms6E-1" value="&lt;span style=&quot;font-size: 11px; white-space: nowrap; background-color: rgb(255, 255, 255);&quot;&gt;I2C / analog / 1-Wire&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="500" y="335" width="60" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
